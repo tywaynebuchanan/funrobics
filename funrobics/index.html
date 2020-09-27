@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Funrobics</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+</head>
+<body>
+
+	<div class="container">
+	
+			<h1> Funrobics Fitness</h1>
+			<h2> COMING SOON</h2>
+	
+			
+		<div class="count">
+			<div class="countd">
+				<span id="days"></span>
+				Days
+			</div>	
+
+			<div class="countd">
+				<span id="hours"></span>
+				Hours
+			</div>	
+
+			<div class="countd">
+				<span id="minutes"></span>
+				Minutes
+			</div>	
+
+			<div class="countd">
+				<span id="seconds"></span>
+				Seconds
+			</div>	
+
+		</div>
+
+		<hr>
+
+		<h3> Please reach us on our social media platforms</h3>
+			
+			<div class="social">
+				<a href="https://instagram.com/funrobicsfitness?igshid=n8611iabpz1s"><img class="rounded" src="img/instagram.png" width="50" height="50"></a>
+
+				<a href="https://www.youtube.com/channel/UCBQ32SXy8mtngxJ80nCB53Q"><img class ="rounded" src="img/youtube.jpg" width="50" height="50"></a>
+
+				<a href="https://www.facebook.com/FunRobics/"><img class ="rounded" src="img/facebook.png" width="50" height="50"></a>
+			</div>
+
+				
+	</div>
+	
+</body>
+
+<script type="text/javascript">
+	
+	var count = new Date("Jan 1, 2021 00:00:00").getTime();
+
+	var x = setInterval(function(){
+
+		var now = new Date().getTime();
+		var d = count - now;
+		var days = Math.floor(d/(1000*60*60*24));
+		var hours = Math.floor((d%(1000*60*60*24))/(1000*60*60)); 
+		var minutes = Math.floor((d%(1000*60*60))/(1000*60));
+		var seconds = Math.floor((d%(1000*60))/1000);
+
+		document.getElementById("days").innerHTML = days ;
+		document.getElementById("hours").innerHTML = hours;
+		document.getElementById("minutes").innerHTML = minutes;
+		document.getElementById("seconds").innerHTML = seconds;
+
+		if(d <= 0)
+		{
+			clearInterval(x);
+		}
+
+
+	},1000);
+
+</script>
+</html>
